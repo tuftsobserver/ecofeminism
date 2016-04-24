@@ -1,20 +1,3 @@
-*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-
-/*
- * TODO:
- * Get rid of unnecessary declarations from codrops
- * Make opening and closing image the ecofeminism image from Jake
- * Add art credit
- * Add more box faces
- * Bring in Pull Quotes
- * Bring in Author Name
- * "Go Back to the Observer"
- * https://desandro.github.io/3dtransforms/docs/cube.html
- * make left and right cube faces the beginning and ending fullscreen
- * Final credits pulls up when end of article at top of window, not bottom
- */
-
-
 html, body, div, span,
 h1, h2, h3, h4, h5, h6, p,
 a, article, section {
@@ -29,9 +12,7 @@ html {
 
 body {
     font-family: "Ubuntu", sans-serif;
-    /*background-color:rgb(235, 235, 235);*/
     color: #48484a;
-    /*max-width:1280px;*/
     margin:auto;
     background-color: rgb(246, 246, 246)
 }
@@ -51,36 +32,56 @@ figure {
 }
 
 p {
-	font-size: 1rem;
-	line-height: 1.5rem;
+	font-size: 1.25rem;
+	line-height: 1.9rem;
 	font-family: "Vollkorn", serif;
 	text-align: justify;
 	color: #48484a;
 }
 
 a {
-    text-decoration: none;
     font-family: "Ubuntu", sans-serif;
+    text-decoration: none;
     font-size: inherit;
     color: inherit;
     line-height: inherit;
     outline: none;
 }
 
+p a {
+    font-family:inherit;
+    text-decoration: underline;
+    color: #d24d57;
+}
+
 h1, h2 {
     text-transform: uppercase;
     font-weight: 700;
-    text-align:left;
 }
 
 h2 {
-    font-size: 2.5rem;
-    line-height: 3rem;
+    margin: 0;
+    padding: 0.5em;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    font-size: 3vw;
+    line-height: 3.6vw;
+    text-align:center;
 }
 
 h1 {
     font-size: 3rem;
     line-height: 3.15rem;
+    text-align: left;
+}
+
+img {
+    object-fit: cover;
+    height:30vw;
+    width:30vw;
 }
 
 .single__title, .single__author {
@@ -116,9 +117,8 @@ h1 {
     padding: 0.3rem 0.9rem;
     color: #fff;
 }
-
-#spacer {
-	height: 50vh;
+#spacer0 {
+    height:1px;
 }
 
 #spacer1 {
@@ -129,66 +129,57 @@ h1 {
 	height: 101vh;
 }
 
-/*#bg {
-	background-image: url("ecofeminism.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
+#credits {
+    visibility: hidden;
+    position:fixed;
+    top: calc(50vh - 15vw);
+    left: 70vw;
+    margin: 0;
+    height: 30vw;
+    width: 25vw;
+    z-index: 40;
+}
 
-	position: fixed;
-	top:0;
-	right:0;
-	width:40vw;
-	height:100vh;
-	z-index:0;
+#credits.show-right {
+    visibility:visible;
+}
 
-	opacity:0.5;
-}*/
+#credits.show-bottom {
+    visibility: hidden;
+    transition: visibility 0s 0.5s;
+}
 
-
-
+#credits p {
+    text-align:left;
+}
 
 #container {
+    display:none;
     position: fixed;
-    top: 25vh;
+    top: calc(50vh - 15vw);
     left: 65vw;
-    height: 50vh;
-    width: 30vw;
     margin: 0;
     padding: 0;
+    height: 30vw;
+    width:30vw;
     z-index: 50;
-    border: 1px solid #CCC;
     -webkit-perspective: 1000px;
        -moz-perspective: 1000px;
          -o-perspective: 1000px;
             perspective: 1000px;
 
-
+    -webkit-transition: -webkit-transform 0.5s;
+       -moz-transition: -moz-transform 0.5s;
+         -o-transition: -o-transform 0.5s;
+            transition: transform 0.5s;
 }
 
-/*#container.show-back {
-    height:100vh;
-    width:100vw;
-    transform: translateX(-65vw) translateY(-25vh);
-    -webkit-transition: -webkit-transform 0.5s, width 0.5s, height 0.5s;
-       -moz-transition: -moz-transform 0.5s, width 0.5s, height 0.5s;
-         -o-transition: -o-transform 0.5s, width 0.5s, height 0.5s;
-            transition: transform 0.5s, width 0.5s, height 0.5s;
+#container.show-right {
+    -webkit-transform: translateX( -30vw );
+       -moz-transform: translateX( -30vw );
+         -o-transform: translateX( -30vw );
+            transform: translateX( -30vw );
 }
-
-#container.show-front,
-#container.show-top,
-#container.show-bottom {
-
-    height: 50vh;
-    width: 30vw;
-
-    -webkit-transition: -webkit-transform 0.5s, width 0.5s, height 0.5s;
-       -moz-transition: -moz-transform 0.5s, width 0.5s, height 0.5s;
-         -o-transition: -o-transform 0.5s, width 0.5s, height 0.5s;
-            transition: transform 0.5s, width 0.5s, height 0.5s;
-}*/
-
 
 #cube {
     width: 100%;
@@ -198,10 +189,10 @@ h1 {
        -moz-transform-style: preserve-3d;
          -o-transform-style: preserve-3d;
             transform-style: preserve-3d;
-         -webkit-transition: -webkit-transform 0.5s 0.5s;
-            -moz-transition: -moz-transform 0.5s 0.5s;
-              -o-transition: -o-transform 0.5s 0.5s;
-                 transition: transform 0.5s 0.5s;
+         -webkit-transition: -webkit-transform 0.5s;
+            -moz-transition: -moz-transform 0.5s;
+              -o-transition: -o-transform 0.5s;
+                 transition: transform 0.5s;
 }
 
 #cube figure {
@@ -213,132 +204,95 @@ h1 {
     text-align: center;
 }
 
-#cube.show-back .back {
-
-    height:100vh;
-    width:100vw;
-    top:-25vh;
-    right:-5vw;
-
-    -webkit-transition: -webkit-transform 0.5s, width 0.5s, height 0.5s;
-       -moz-transition: -moz-transform 0.5s, width 0.5s, height 0.5s;
-         -o-transition: -o-transform 0.5s, width 0.5s, height 0.5s;
-            transition: transform 0.5s, width 0.5s, height 0.5s;
-}
-#cube .front  { background: #d24d57 }
-#cube .back   {
-    /*background-image: url("ecofeminism.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;*/
-    background: rgb(176, 153, 171);
-
-    -webkit-transition: -webkit-transform 0.5s, width 0.5s, height 0.5s;
-       -moz-transition: -moz-transform 0.5s, width 0.5s, height 0.5s;
-         -o-transition: -o-transform 0.5s, width 0.5s, height 0.5s;
-            transition: transform 0.5s, width 0.5s, height 0.5s;
-
-
-}
-/*#cube .right  { background: hsla( 120, 100%, 50%, 1 ); }*/
-/*#cube .left   { background: hsla( 180, 100%, 50%, 1 ); }*/
-#cube .top    { background: rgb(244, 225, 60); }
-#cube .bottom { background: rgb(255, 255, 255); }
+#cube .front  { background: rgb(173, 201, 57);  }
+#cube .back   { background: rgb(255, 255, 255); }
+#cube .top    { background: rgb(244, 225, 60);  }
+#cube .bottom { background: rgb(210, 77, 87);   }
 
 #cube .front {
-    -webkit-transform: translateZ( 25vh );
-       -moz-transform: translateZ( 25vh );
-         -o-transform: translateZ( 25vh );
-            transform: translateZ( 25vh );
+    -webkit-transform: translateZ( 15vw );
+       -moz-transform: translateZ( 15vw );
+         -o-transform: translateZ( 15vw );
+            transform: translateZ( 15vw );
 }
 #cube .back {
-    -webkit-transform: rotateX( -180deg ) translateZ( 25vh );
-       -moz-transform: rotateX( -180deg ) translateZ( 25vh );
-         -o-transform: rotateX( -180deg ) translateZ( 25vh );
-            transform: rotateX( -180deg ) translateZ( 25vh );
+    -webkit-transform: rotateX( -180deg ) translateZ( 15vw );
+       -moz-transform: rotateX( -180deg ) translateZ( 15vw );
+         -o-transform: rotateX( -180deg ) translateZ( 15vw );
+            transform: rotateX( -180deg ) translateZ( 15vw );
 }
-
-/*#cube.show-back .back {
-    -webkit-transform: rotateX( -180deg ) translateZ( 50vh );
-       -moz-transform: rotateX( -180deg ) translateZ( 50vh );
-         -o-transform: rotateX( -180deg ) translateZ( 50vh );
-            transform: rotateX( -180deg ) translateZ( 50vh );
-}*/
-
 #cube .right {
-    -webkit-transform: rotateY( 90deg ) translateZ( 25vh );
-       -moz-transform: rotateY( 90deg ) translateZ( 25vh );
-         -o-transform: rotateY( 90deg ) translateZ( 25vh );
-            transform: rotateY( 90deg ) translateZ( 25vh );
+    -webkit-transform: rotateY( 90deg ) translateZ( 15vw );
+       -moz-transform: rotateY( 90deg ) translateZ( 15vw );
+         -o-transform: rotateY( 90deg ) translateZ( 15vw );
+            transform: rotateY( 90deg ) translateZ( 15vw );
 }
 #cube .left {
-    -webkit-transform: rotateY( -90deg ) translateZ( 25vh );
-       -moz-transform: rotateY( -90deg ) translateZ( 25vh );
-         -o-transform: rotateY( -90deg ) translateZ( 25vh );
-            transform: rotateY( -90deg ) translateZ( 25vh );
+    -webkit-transform: rotateY( -90deg ) translateZ( 15vw );
+       -moz-transform: rotateY( -90deg ) translateZ( 15vw );
+         -o-transform: rotateY( -90deg ) translateZ( 15vw );
+            transform: rotateY( -90deg ) translateZ( 15vw );
 }
 #cube .top {
-    -webkit-transform: rotateX( 90deg ) translateZ( 25vh );
-       -moz-transform: rotateX( 90deg ) translateZ( 25vh );
-         -o-transform: rotateX( 90deg ) translateZ( 25vh );
-            transform: rotateX( 90deg ) translateZ( 25vh );
+    -webkit-transform: rotateX( 90deg ) translateZ( 15vw );
+       -moz-transform: rotateX( 90deg ) translateZ( 15vw );
+         -o-transform: rotateX( 90deg ) translateZ( 15vw );
+            transform: rotateX( 90deg ) translateZ( 15vw );
 }
 #cube .bottom {
-    -webkit-transform: rotateX( -90deg ) translateZ( 25vh );
-       -moz-transform: rotateX( -90deg ) translateZ( 25vh );
-         -o-transform: rotateX( -90deg ) translateZ( 25vh );
-            transform: rotateX( -90deg ) translateZ( 25vh );
+    -webkit-transform: rotateX( -90deg ) translateZ( 15vw );
+       -moz-transform: rotateX( -90deg ) translateZ( 15vw );
+         -o-transform: rotateX( -90deg ) translateZ( 15vw );
+            transform: rotateX( -90deg ) translateZ( 15vw );
 }
 
 #cube.show-front {
-    -webkit-transform: translateZ( -25vh );
-       -moz-transform: translateZ( -25vh );
-         -o-transform: translateZ( -25vh );
-            transform: translateZ( -25vh );
+    -webkit-transform: translateZ( -15vw );
+       -moz-transform: translateZ( -15vw );
+         -o-transform: translateZ( -15vw );
+            transform: translateZ( -15vw );
 }
 #cube.show-back {
-    -webkit-transform: translateZ( -25vh ) rotateX( -180deg );
-       -moz-transform: translateZ( -25vh ) rotateX( -180deg );
-         -o-transform: translateZ( -25vh ) rotateX( -180deg );
-            transform: translateZ( -25vh ) rotateX( -180deg );
-
-
+    -webkit-transform: translateZ( -15vw ) rotateX( -180deg );
+       -moz-transform: translateZ( -15vw ) rotateX( -180deg );
+         -o-transform: translateZ( -15vw ) rotateX( -180deg );
+            transform: translateZ( -15vw ) rotateX( -180deg );
 }
 #cube.show-right {
-    -webkit-transform: translateZ( -25vh ) rotateY( -90deg );
-       -moz-transform: translateZ( -25vh ) rotateY( -90deg );
-         -o-transform: translateZ( -25vh ) rotateY( -90deg );
-            transform: translateZ( -25vh ) rotateY( -90deg );
+    -webkit-transform: translateZ( -15vw ) rotateY( -90deg );
+       -moz-transform: translateZ( -15vw ) rotateY( -90deg );
+         -o-transform: translateZ( -15vw ) rotateY( -90deg );
+            transform: translateZ( -15vw ) rotateY( -90deg );
 }
 #cube.show-left {
--webkit-transform: translateZ( -25vh ) rotateY( 90deg );
-   -moz-transform: translateZ( -25vh ) rotateY( 90deg );
-     -o-transform: translateZ( -25vh ) rotateY( 90deg );
-        transform: translateZ( -25vh ) rotateY( 90deg );
+-webkit-transform: translateZ( -15vw ) rotateY( 90deg );
+   -moz-transform: translateZ( -15vw ) rotateY( 90deg );
+     -o-transform: translateZ( -15vw ) rotateY( 90deg );
+        transform: translateZ( -15vw ) rotateY( 90deg );
 }
 #cube.show-top {
--webkit-transform: translateZ( -25vh ) rotateX( -90deg );
-   -moz-transform: translateZ( -25vh ) rotateX( -90deg );
-     -o-transform: translateZ( -25vh ) rotateX( -90deg );
-        transform: translateZ( -25vh ) rotateX( -90deg );
+-webkit-transform: translateZ( -15vw ) rotateX( -90deg );
+   -moz-transform: translateZ( -15vw ) rotateX( -90deg );
+     -o-transform: translateZ( -15vw ) rotateX( -90deg );
+        transform: translateZ( -15vw ) rotateX( -90deg );
 }
 #cube.show-bottom {
--webkit-transform: translateZ( -25vh ) rotateX( 90deg );
-   -moz-transform: translateZ( -25vh ) rotateX( 90deg );
-     -o-transform: translateZ( -25vh ) rotateX( 90deg );
-        transform: translateZ( -25vh ) rotateX( 90deg );
+-webkit-transform: translateZ( -15vw ) rotateX( 90deg );
+   -moz-transform: translateZ( -15vw ) rotateX( 90deg );
+     -o-transform: translateZ( -15vw ) rotateX( 90deg );
+        transform: translateZ( -15vw ) rotateX( 90deg );
 }
 
 
 
-@media screen and (max-width: 65em) {
-	/*body {
+@media screen and (max-width: 840px) {
+	html {
 		font-size: 85%;
-	}*/
+	}
 }
 
-@media screen and (max-width: 38em) {
-	/*section {
-		font-size: 1.3em;
-	}*/
+@media screen and (max-width: 600px) {
+	html {
+        font-size: 70%;
+    }
 }
