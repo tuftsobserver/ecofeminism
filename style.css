@@ -13,18 +13,18 @@ html {
 body {
     font-family: "Ubuntu", sans-serif;
     color: #48484a;
-    margin:auto;
-    background-color: rgb(246, 246, 246)
+    margin: auto;
+    background-color: rgb(246, 246, 246);
 }
 
 article {
-	width:60%;
+	width: 60%;
 }
 
 section {
 	width: 90%;
-	margin-left:auto;
-	margin-right:auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 figure {
@@ -69,7 +69,7 @@ h2 {
 
     font-size: 3vw;
     line-height: 3.6vw;
-    text-align:center;
+    text-align: center;
 }
 
 h1 {
@@ -80,8 +80,8 @@ h1 {
 
 img {
     object-fit: cover;
-    height:30vw;
-    width:30vw;
+    height: 30vw;
+    width: 30vw;
 }
 
 .single__title, .single__author {
@@ -117,21 +117,17 @@ img {
     padding: 0.3rem 0.9rem;
     color: #fff;
 }
-#spacer0 {
-    height:1px;
-}
 
 #spacer1 {
-	height: 1vh;
+    height: 1px;
 }
-
 #spacer2 {
 	height: 101vh;
 }
 
 #credits {
     visibility: hidden;
-    position:fixed;
+    position: fixed;
     top: calc(50vh - 15vw);
     left: 70vw;
     margin: 0;
@@ -141,7 +137,7 @@ img {
 }
 
 #credits.show-right {
-    visibility:visible;
+    visibility: visible;
 }
 
 #credits.show-bottom {
@@ -150,18 +146,18 @@ img {
 }
 
 #credits p {
-    text-align:left;
+    text-align: left;
 }
 
 #container {
-    display:none;
+    display: none;
     position: fixed;
     top: calc(50vh - 15vw);
     left: 65vw;
     margin: 0;
     padding: 0;
     height: 30vw;
-    width:30vw;
+    width: 30vw;
     z-index: 50;
     -webkit-perspective: 1000px;
        -moz-perspective: 1000px;
@@ -283,8 +279,6 @@ img {
         transform: translateZ( -15vw ) rotateX( 90deg );
 }
 
-
-
 @media screen and (max-width: 840px) {
 	html {
 		font-size: 85%;
@@ -293,6 +287,26 @@ img {
 
 @media screen and (max-width: 600px) {
 	html {
-        font-size: 70%;
+        font-size: 80%;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    article {
+    	width:100%;
+    }
+
+    #container {
+        top: calc(100vh - 35vw);
+        left: 35vw;
+    }
+
+    #credits {
+        top: calc(100vh - 35vw);
+        left: 40vw;
+    }
+
+    #credits p {
+        font-size:90%;
     }
 }
