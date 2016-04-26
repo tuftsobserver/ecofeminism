@@ -14,7 +14,7 @@ body {
     font-family: "Ubuntu", sans-serif;
     color: #48484a;
     margin: auto;
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(255, 255, 255);
 }
 
 article {
@@ -67,8 +67,8 @@ h2 {
     top: 50%;
     transform: translate(-50%,-50%);
 
-    font-size: 3vw;
-    line-height: 3.6vw;
+    font-size: 2.5vw;
+    line-height: 3vw;
     text-align: center;
 }
 
@@ -82,6 +82,10 @@ img {
     object-fit: cover;
     height: 30vw;
     width: 30vw;
+}
+
+.italic {
+    font-style:italic;
 }
 
 .single__title, .single__author {
@@ -132,7 +136,7 @@ img {
     left: 70vw;
     margin: 0;
     height: 30vw;
-    width: 30vw;
+    width: 25vw;
     z-index: 40;
 }
 
@@ -147,8 +151,8 @@ img {
 
 #credits p {
     text-align: left;
-    font-size: 2vw;
-    line-height: 3vw;
+    font-size: 1.2rem;
+    line-height: 1.75rem;
 }
 
 #container {
@@ -302,7 +306,6 @@ img {
     #container {
         top: calc(100vh - 35vw);
         left: 35vw;
-
     }
 
     #credits {
@@ -315,7 +318,7 @@ img {
     }
 
     #credits p {
-        font-size: 1rem;
-        line-height: 1.5rem;
+        font-size:2.75vw;
+        line-height:4vw;
     }
 }
