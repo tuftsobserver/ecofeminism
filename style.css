@@ -14,7 +14,7 @@ body {
     font-family: "Ubuntu", sans-serif;
     color: #48484a;
     margin: auto;
-    background-color: rgb(246, 246, 246);
+    background-color: rgb(250, 250, 250);
 }
 
 article {
@@ -150,7 +150,6 @@ img {
 }
 
 #container {
-    display: none;
     position: fixed;
     top: calc(50vh - 15vw);
     left: 65vw;
@@ -200,6 +199,8 @@ img {
     text-align: center;
 }
 
+#cube .left   { background: rgb(36, 36, 36);    }
+#cube .right   { background: rgb(36, 36, 36);   }
 #cube .front  { background: rgb(173, 201, 57);  }
 #cube .back   { background: rgb(255, 255, 255); }
 #cube .top    { background: rgb(244, 225, 60);  }
