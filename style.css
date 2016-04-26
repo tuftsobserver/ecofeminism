@@ -132,7 +132,7 @@ img {
     left: 70vw;
     margin: 0;
     height: 30vw;
-    width: 25vw;
+    width: 30vw;
     z-index: 40;
 }
 
@@ -147,6 +147,8 @@ img {
 
 #credits p {
     text-align: left;
+    font-size: 2vw;
+    line-height: 3vw;
 }
 
 #container {
@@ -200,7 +202,7 @@ img {
 }
 
 #cube .left   { background: rgb(36, 36, 36);    }
-#cube .right   { background: rgb(36, 36, 36);   }
+#cube .right  { background: rgb(36, 36, 36);    }
 #cube .front  { background: rgb(173, 201, 57);  }
 #cube .back   { background: rgb(255, 255, 255); }
 #cube .top    { background: rgb(244, 225, 60);  }
@@ -300,6 +302,7 @@ img {
     #container {
         top: calc(100vh - 35vw);
         left: 35vw;
+
     }
 
     #credits {
@@ -307,7 +310,12 @@ img {
         left: 40vw;
     }
 
+    #credits.show-bottom {
+        transition: visibility 0s 0.3s;
+    }
+
     #credits p {
-        font-size:90%;
+        font-size: 1rem;
+        line-height: 1.5rem;
     }
 }
